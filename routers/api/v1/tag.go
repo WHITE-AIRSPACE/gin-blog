@@ -14,7 +14,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// 获取多个文章标签
+// @Summary Get multiple article tags
+// @Product json
+// @Param name query string false "Name"
+// @Param state query int false "State"
+// @Success 200 {object} app.Response
+// @Failure 500 {object} app.Response
+// @Router /api/v1/tags [get]
 func GetTags(c *gin.Context) {
 	name := c.Query("name")
 
